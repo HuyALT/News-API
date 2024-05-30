@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "2ce2e4c5-e6c2-4f65-a7b3-32933f19b19f",
+		"name": "NewsIdentityService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21498821"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"DatBrPro\",\r\n    \"password\":\"123456\",\r\n    \"email\":\"nguyentiendatntrai@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin1\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateToken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/auth/validate?token=",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCurrentUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/auth/currentUser",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"currentUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"DatBr\",\r\n    \"password\":\"DatBr1234\",\r\n    \"email\":\"DatBr@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendOtp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/v1/auth/otp/send-otp?email=nguyentiendatntrai@gmail.com",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"otp",
+						"send-otp"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "nguyentiendatntrai@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verifyOtp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.238:8080/api/v1/auth/otp/verify-otp?email=nguyentiendatntrai@gmail.com&otp=434733",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"238"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"otp",
+						"verify-otp"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "nguyentiendatntrai@gmail.com"
+						},
+						{
+							"key": "otp",
+							"value": "434733"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "134be33f-480e-4844-b29f-352679f8a239",
+		"name": "NewsCommentService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21498821"
+	},
+	"item": [
+		{
+			"name": "getCommentsByNewsid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/comments?newsid=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "newsid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwidXNlcm5hbWUiOiJIdXlVc2VyMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzE3MDY1NzU0LCJleHAiOjE3MTcxNTIxNTR9.ptgwo1CLotk9PbLJDC-rGIzsKUhrlhAZrMvAkzHC7jk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newsId\":1,\r\n    \"content\":\"Hay quá\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "newsid",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMyComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwidXNlcm5hbWUiOiJIdXlVc2VyMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzE3MDY3OTQwLCJleHAiOjE3MTcxNTQzNDB9.S8-KB29k_tezf_laMldg0YKLRUXyC-TqTdqzPfxPf38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/user/comments?newsid=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "newsid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwidXNlcm5hbWUiOiJIdXlVc2VyMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzE3MDY3OTQwLCJleHAiOjE3MTcxNTQzNDB9.S8-KB29k_tezf_laMldg0YKLRUXyC-TqTdqzPfxPf38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentsid\":2,\r\n    \"content\":\"Hay +++++1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/user/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwidXNlcm5hbWUiOiJIdXlVc2VyMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzE3MDY3OTQwLCJleHAiOjE3MTcxNTQzNDB9.S8-KB29k_tezf_laMldg0YKLRUXyC-TqTdqzPfxPf38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/user/comments?commentid=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "commentid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteByUserid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/admin/comments?userid=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

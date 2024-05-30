@@ -1,0 +1,10 @@
+com\ptithcm\savedservice\util\JwtUtil.class
+com\ptithcm\savedservice\controller\SavedController.class
+com\ptithcm\savedservice\IService\ISavedService.class
+com\ptithcm\savedservice\repository\SavedRepository.class
+com\ptithcm\savedservice\entity\SavedEntity.class
+com\ptithcm\savedservice\dto\response\SavedResponeDTO.class
+com\ptithcm\savedservice\dto\request\SavedRequestDTO.class
+com\ptithcm\savedservice\NewsSavedServiceApplication.class
+com\ptithcm\savedservice\config\AppConfig.class
+com\ptithcm\savedservice\Service\SavedService.class

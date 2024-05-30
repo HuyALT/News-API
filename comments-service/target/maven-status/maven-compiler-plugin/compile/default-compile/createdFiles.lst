@@ -1,0 +1,13 @@
+com\ptithcm\commentsservice\IService\ICommentService.class
+com\ptithcm\commentsservice\dto\response\CommentResponseDTO.class
+com\ptithcm\commentsservice\repository\CommentRepository.class
+com\ptithcm\commentsservice\controller\CommentController.class
+com\ptithcm\commentsservice\config\Appconfig.class
+com\ptithcm\commentsservice\Service\CommentService.class
+com\ptithcm\commentsservice\controller\AdminCommentController.class
+com\ptithcm\commentsservice\controller\UserCommentController.class
+com\ptithcm\commentsservice\dto\request\CommentRequestUpdate.class
+com\ptithcm\commentsservice\entity\CommentsEntity.class
+com\ptithcm\commentsservice\util\JwtUtil.class
+com\ptithcm\commentsservice\dto\request\CommentRequestDTO.class
+com\ptithcm\commentsservice\NewsCommentsServiceApplication.class

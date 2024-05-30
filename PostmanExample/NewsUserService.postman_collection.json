@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "9f6d46ca-1946-4082-838f-f40311806738",
+		"name": "NewsUserService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21498821"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "getAllUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTcwNzIyNzgsImV4cCI6MTcxNzE1ODY3OH0.-yDB-ec6itl7j_RAR41eICncoAM-bPtJOrXCXoggz8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/admin/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeLocked",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTcwNzIyNzgsImV4cCI6MTcxNzE1ODY3OH0.-yDB-ec6itl7j_RAR41eICncoAM-bPtJOrXCXoggz8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/admin/user/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJodXlBTFQiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTY2NTYzMTEsImV4cCI6MTcxNjc0MjcxMX0.XcO_Gnm8g0mgNAIu6smmGt2Yzeu17EC466x6A0yTyOY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.238:8080/api/admin/user/4",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"238"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ChangePassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwidXNlcm5hbWUiOiJIdXlVc2VyMSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzE3MDY3OTQwLCJleHAiOjE3MTcxNTQzNDB9.S8-KB29k_tezf_laMldg0YKLRUXyC-TqTdqzPfxPf38",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"123456\",\r\n    \"newPassword\":\"000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/account/setting/changePassword",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"setting",
+						"changePassword"
+					],
+					"query": [
+						{
+							"key": "oldPw",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "newPw",
+							"value": "Dat123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTcwNzIyNzgsImV4cCI6MTcxNzE1ODY3OH0.-yDB-ec6itl7j_RAR41eICncoAM-bPtJOrXCXoggz8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/account/setting/getinfo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"setting",
+						"getinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changeInfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwidXNlcm5hbWUiOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3MTcwNzIyNzgsImV4cCI6MTcxNzE1ODY3OH0.-yDB-ec6itl7j_RAR41eICncoAM-bPtJOrXCXoggz8w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/account/setting/changeInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"account",
+						"setting",
+						"changeInfo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

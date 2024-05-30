@@ -1,0 +1,72 @@
+version: '3.8'
+services:
+  mysql:
+    build: ./mysqldata
+    container_name: mysql_server
+  
+  discovery_server:
+    build: ./discovery-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+
+  api_gateway:
+    build: ./api-gateway
+    environment:
+      - ALLOW_ORIGINS=${ALLOW_ORIGINS}
+    ports:
+      - "${HOST_IP}:8080:8080"
+
+
+  identity_service:
+    build: ./Identity-service
+    environment:                    
+      - DB_HOST=${DB_HOST}       
+      - DB_PORT=${DB_PORT}       
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - EM_USERNAME=${EM_USERNAME}
+      - EM_APP_PASSWORD=${EM_APP_PASSWORD}
+    ports:
+      - "8082:8080"
+
+  comments_service:
+    build: ./comments-service
+    environment:
+      - DB_HOST=${DB_HOST}          
+      - DB_PORT=${DB_PORT}          
+      - DB_USERNAME=${DB_USERNAME}  
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "8083:8080"
+
+  news_service:
+    build: ./news-service
+    environment:                      
+      - DB_HOST=${DB_HOST}        
+      - DB_PORT=${DB_PORT}        
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "8084:8080"
+
+  saved_service:
+    build: ./saved-service
+    environment:
+      - DB_HOST=${DB_HOST}          	
+      - DB_PORT=${DB_PORT}          
+      - DB_USERNAME=${DB_USERNAME}  
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "8085:8080"
+
+  user_service:
+    build: ./user-service
+    environment:
+      - DB_HOST=${DB_HOST}        	
+      - DB_PORT=${DB_PORT}        
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "8086:8080"
+      

@@ -1,0 +1,10 @@
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\config\AppConfig.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\controller\SavedController.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\dto\request\SavedRequestDTO.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\dto\response\SavedResponeDTO.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\entity\SavedEntity.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\IService\ISavedService.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\NewsSavedServiceApplication.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\repository\SavedRepository.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\Service\SavedService.java
+D:\Code\Java\Springboot\Microservice\news-microservice\saved-service\src\main\java\com\ptithcm\savedservice\util\JwtUtil.java
