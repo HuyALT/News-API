@@ -2,16 +2,16 @@ package com.ptithcm.newsservice.dto.request;
 
 public class SubCategoryRequestDTO {
 	private String name;
-	private String sortName;
-	private Long categoryid;
+	private String sort_name;
+	private Long category_id;
 	public SubCategoryRequestDTO() {
 		super();
 	}
-	public SubCategoryRequestDTO(String name, String sortName, Long categoryid) {
+	public SubCategoryRequestDTO(String name, String sort_name, Long category_id) {
 		super();
 		this.name = name;
-		this.sortName = sortName;
-		this.categoryid = categoryid;
+		this.sort_name = sort_name;
+		this.category_id = category_id;
 	}
 	public String getName() {
 		return name;
@@ -19,18 +19,19 @@ public class SubCategoryRequestDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSortName() {
-		return sortName;
+	public String getSort_name() {
+		return sort_name;
 	}
-	public void setSortName(String sortName) {
-		this.sortName = sortName;
+	public void setSort_name(String sort_name) {
+		this.sort_name = sort_name;
 	}
-	public Long getCategoryid() {
-		return categoryid;
+	public Long getCategory_id() {
+		return category_id;
 	}
-	public void setCategoryid(Long categoryid) {
-		this.categoryid = categoryid;
+	public void setCategory_id(Long category_id) {
+		this.category_id = category_id;
 	}
+	
 	
 	
 }

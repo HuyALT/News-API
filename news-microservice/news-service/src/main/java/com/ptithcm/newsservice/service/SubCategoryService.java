@@ -81,15 +81,15 @@ public class SubCategoryService implements ISubCategoryService {
 	public SubCategoryResponeDTO updateSubCategory(SubCategoryRequestDTO request, Long id) {
 		Optional<SubCategoryEntity> entity = subCategoryRepository.findById(id);
 		if (entity.isEmpty()) return null;
-		if (request.getCategoryid()!=null) {
-			Optional<CategoryEntity> categoryOptional = categoryReponsitory.findById(request.getCategoryid());
+		if (request.getCategory_id()!=null) {
+			Optional<CategoryEntity> categoryOptional = categoryReponsitory.findById(request.getCategory_id());
 			if (categoryOptional.isPresent()) {
 				entity.get().setCategory(categoryOptional.get());
 			}
 		}
 		
 		if (request.getName()!=null) entity.get().setName(request.getName());
-		if (request.getSortName()!=null) entity.get().setSortName(request.getSortName());
+		if (request.getSort_name()!=null) entity.get().setSortName(request.getSort_name());
 		return entityToRespone(subCategoryRepository.save(entity.get()));
 		
 	}
@@ -106,11 +106,11 @@ public class SubCategoryService implements ISubCategoryService {
 	}
 	
 	private SubCategoryEntity requestToEntity(SubCategoryRequestDTO request) {
-		Optional<CategoryEntity> categoryOptional = categoryReponsitory.findById(request.getCategoryid());
+		Optional<CategoryEntity> categoryOptional = categoryReponsitory.findById(request.getCategory_id());
 		if (categoryOptional.isEmpty()) return null;
 		SubCategoryEntity entity = new SubCategoryEntity();
 		entity.setName(request.getName());
-		entity.setSortName(request.getSortName());
+		entity.setSortName(request.getSort_name());
 		entity.setCategory(categoryOptional.get());
 		return entity;
 	}

@@ -44,7 +44,7 @@ public class CategoryService implements ICategoryService {
 		Optional<CategoryEntity> categoryOptional = categoryReponsitory.findById(id);
 		if (categoryOptional.isPresent()) {
 			if (request.getName()!=null) categoryOptional.get().setName(request.getName());
-			if (request.getSortName()!=null) categoryOptional.get().setSortName(request.getSortName());
+			if (request.getSort_name()!=null) categoryOptional.get().setSortName(request.getSort_name());
 			
 			return entityToRespone(categoryReponsitory.save(categoryOptional.get()));
 		}
@@ -78,7 +78,7 @@ public class CategoryService implements ICategoryService {
 	private CategoryEntity requestToEntity(CategoryRequestDTO request) {
 		CategoryEntity entity = new CategoryEntity();
 		entity.setName(request.getName());
-		entity.setSortName(request.getSortName());
+		entity.setSortName(request.getSort_name());
 		return entity;
 	}
 
