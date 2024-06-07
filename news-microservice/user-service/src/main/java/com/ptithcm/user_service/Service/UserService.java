@@ -81,15 +81,28 @@ public class UserService implements IUserService {
 		return false;
 	}
 	
+	
+	
+	@Override
+	public UserDTO getuserInfoByid(Long id) {
+		Optional<UserEntity> userEntity = userRepository.findById(id);
+		if (userEntity.isPresent()) {
+			return entityToDto(userEntity.get());
+		}
+		return null;
+	}
+
 	private UserDTO entityToDto(UserEntity entity) {
 		UserDTO dto = new UserDTO();
 		dto.setActive(entity.getActicve());
 		dto.setEmail(entity.getEmail());
 		dto.setImage(entity.getImage());
 		dto.setLocked(entity.getLocked());
+		dto.setRole(entity.getRole().getId());
 		dto.setUsername(entity.getUsername());
 		dto.setCreateAt(entity.getCreatedAt());
 		dto.setUpdateAt(entity.getUpdatedAt());
+		dto.setId(entity.getId());
 		return dto;
 	}
 	

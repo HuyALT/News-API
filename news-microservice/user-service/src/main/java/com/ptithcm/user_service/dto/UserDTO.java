@@ -9,12 +9,13 @@ public class UserDTO {
 	private String email;
 	private int active;
 	private int locked;
+	private Long role;
 	private LocalDateTime createAt;
 	private LocalDateTime updateAt;
 	public UserDTO() {
 		super();
 	}
-	public UserDTO(Long id,String username, String image, String email, int active, int locked, LocalDateTime createAt,
+	public UserDTO(Long id,String username, String image, String email, int active, int locked, Long role, LocalDateTime createAt,
 			LocalDateTime updateAt) {
 		super();
 		this.id = id;
@@ -23,6 +24,7 @@ public class UserDTO {
 		this.email = email;
 		this.active = active;
 		this.locked = locked;
+		this.role = role;
 		this.createAt = createAt;
 		this.updateAt = updateAt;
 	}
@@ -61,6 +63,12 @@ public class UserDTO {
 	}
 	public void setLocked(int locked) {
 		this.locked = locked;
+	}
+	public Long getRole() {
+		return role;
+	}
+	public void setRole(Long role) {
+		this.role = role;
 	}
 	public LocalDateTime getCreateAt() {
 		return createAt;

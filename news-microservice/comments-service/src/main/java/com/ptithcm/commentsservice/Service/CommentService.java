@@ -1,5 +1,7 @@
 package com.ptithcm.commentsservice.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,7 +53,7 @@ public class CommentService implements ICommentService {
 		if (!isNewsExist(newid)) {
             throw new IllegalArgumentException("News ID does not exist");
         }
-		return commentRepository.findByNewsId(newid)
+		return commentRepository.findByNewsIdOrderByCreatedAtDesc(newid)
 				.stream()
 				.map(this::entityToRespone)
 				.collect(Collectors.toList());
@@ -116,8 +118,17 @@ public class CommentService implements ICommentService {
 		dto.setContent(entity.getContent());
 		dto.setNewsId(entity.getNewsId());
 		dto.setContent(entity.getContent());
+		
 		dto.setCreateAt(entity.getCreatedAt());
 		dto.setUpdateAt(entity.getUpdatedAt());
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+		String updateat = dto.getUpdateAt().format(formatter);
+		String createat = dto.getCreateAt().format(formatter);
+		
+		dto.setCreateAt(LocalDateTime.parse(createat, formatter));
+		dto.setUpdateAt(LocalDateTime.parse(updateat, formatter));
+		
+		
 		dto.setId(entity.getId());
 		dto.setUserId(entity.getUserId());
 		return dto;

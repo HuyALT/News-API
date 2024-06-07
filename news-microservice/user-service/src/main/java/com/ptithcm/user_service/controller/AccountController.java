@@ -73,6 +73,15 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Not authorization");
 	}
 	
+	@GetMapping("/another")
+	public ResponseEntity<?> getUserInfo(@RequestParam Long userId){
+		UserDTO responseData = userService.getuserInfoByid(userId);
+		if (responseData!=null)
+			return ResponseEntity.status(HttpStatus.OK).body(responseData);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fail");
+	}
+	
+	
 	@ExceptionHandler(PasswordException.class)
 	public ResponseEntity<?> handlePasswordException(PasswordException ex){
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());

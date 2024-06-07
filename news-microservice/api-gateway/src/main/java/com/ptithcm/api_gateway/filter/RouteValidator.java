@@ -15,7 +15,8 @@ public class RouteValidator {
             "/eureka",
             "/api/v1/news/**",
             "/api/v1/comment/**",
-            "/api/v1/account/setting/canlogin"
+            "/api/v1/account/setting/canlogin",
+            "api/v1/account/setting/another"
     );
 
     

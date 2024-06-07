@@ -29,7 +29,7 @@ public class AuthNewsController {
 	@GetMapping("latest-news")
 	public ResponseEntity<?> getLatestNews(
 			@RequestParam(defaultValue = "0")int pageindex,
-			@RequestParam(defaultValue = "10")int pageSize,
+			@RequestParam(defaultValue = "10000")int pageSize,
 			@RequestParam(required = false, defaultValue = "0")Long categoryid,
 			@RequestParam(required = false, defaultValue = "0")Long subcategoryid,
 			@RequestParam(required = false)Integer type) {

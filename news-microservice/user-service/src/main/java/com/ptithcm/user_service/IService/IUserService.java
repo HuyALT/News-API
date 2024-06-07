@@ -9,5 +9,6 @@ public interface IUserService {
 	UserDTO updateUserInfo(String token, UserDTO userinfo);
 	UserDTO getInfo(String token);
 	boolean isLockedOrActive(String token);
+	UserDTO getuserInfoByid(Long id);
 	
 }
