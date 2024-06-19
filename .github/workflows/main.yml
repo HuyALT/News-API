@@ -16,17 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up JDK 17
+      - name: Set up JDK 17 and Maven
         uses: actions/setup-java@v2
         with:
           java-version: '17'
           distribution: 'adopt'
-
-      - name: Set up Maven
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'apache-maven'
           maven-version: '3.8.4'
+
 
       - name: Build api-gateway
         run: |
