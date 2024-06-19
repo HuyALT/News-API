@@ -1,0 +1,63 @@
+name: Build, Test and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Set up Maven
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'apache-maven'
+          maven-version: '3.8.4'
+
+      - name: Build api-gateway
+        run: |
+          cd news-microservice/api-gateway
+          mvn clean install
+
+      - name: Build identity service
+        run: |
+          cd news-microservice/Identity-service
+          mvn clean install
+          
+      - name: Build comments service
+        run: |
+          cd news-microservice/comments-service
+          mvn clean install
+
+      - name: Build discovery server
+        run: |
+          cd news-microservice/discovery-server
+          mvn clean install
+          
+      - name: Build news service
+        run: |
+          cd news-microservice/news-service
+          mvn clean install
+          
+      - name: Build saved service
+        run: |
+          cd news-microservice/saved-service
+          mvn clean install
+
+      - name: Build user service
+        run: |
+          cd news-microservice/user-service
+          mvn clean install
