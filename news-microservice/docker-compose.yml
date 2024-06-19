@@ -1,10 +1,9 @@
 version: '3.8'
 services:
   mysql:
-    image: mysql_server:latest
-    
+    image: mysql-server:latest  
     build: ./mysqldata
-    container_name: mysql_server
+    container_name: mysql-server
   
   discovery_server:
     image: discovery-server:latest
