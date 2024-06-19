@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  buildAndDeloy:
     runs-on: ubuntu-latest
 
     steps:
@@ -58,3 +58,45 @@ jobs:
         run: |
           cd news-microservice/user-service
           mvn clean install
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: run docker compose
+        run: |
+          cd news-microservice
+          docker-compose build
+      
+      - name: tag name docker image
+        run: |
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/mysql_server:mysql-server-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/discovery-server:discovery-server-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/api-gateway:api-gateway-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/identity-service:identity-service-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/comments-service:comments-service-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/news-service:news-service-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/saved-service:saved-service-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/user-service:user-service-latest
+
+      - name: push image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/mysql_server:mysql-server-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/discovery-server:discovery-server-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-gateway:api-gateway-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/identity-service:identity-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/comments-service:comments-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/news-service:news-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/saved-service:saved-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/user-service:user-service-latest 
+
+
+
+
+
+
