@@ -61,9 +61,9 @@ services:
     image: saved-service:latest
     build: ./saved-service
     environment:
-      - DB_HOST=${DB_HOST}          	
-      - DB_PORT=${DB_PORT}          
-      - DB_USERNAME=${DB_USERNAME}  
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
     ports:
       - "8085:8080"
@@ -72,8 +72,8 @@ services:
     image: user-service:latest
     build: ./user-service
     environment:
-      - DB_HOST=${DB_HOST}        	
-      - DB_PORT=${DB_PORT}        
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
     ports:
