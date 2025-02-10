@@ -75,28 +75,22 @@ jobs:
       
       - name: tag name docker image
         run: |
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/mysql_server:mysql-server-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/discovery-server:discovery-server-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/api-gateway:api-gateway-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/identity-service:identity-service-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/comments-service:comments-service-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/news-service:news-service-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/saved-service:saved-service-latest
-          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/user-service:user-service-latest
+          docker tag mysql-server ${{ secrets.DOCKER_USERNAME }}/api-news:mysql-server-latest
+          docker tag discovery-server ${{ secrets.DOCKER_USERNAME }}/api-news:discovery-server-latest
+          docker tag api-gateway ${{ secrets.DOCKER_USERNAME }}/api-news:api-gateway-latest
+          docker tag identity-service ${{ secrets.DOCKER_USERNAME }}/api-news:identity-service-latest
+          docker tag comments-service ${{ secrets.DOCKER_USERNAME }}/api-news:comments-service-latest
+          docker tag news-service ${{ secrets.DOCKER_USERNAME }}/api-news:news-service-latest
+          docker tag saved-service ${{ secrets.DOCKER_USERNAME }}/api-news:saved-service-latest
+          docker tag user-service ${{ secrets.DOCKER_USERNAME }}/api-news:user-service-latest
 
       - name: push image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/mysql_server:mysql-server-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/discovery-server:discovery-server-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/api-gateway:api-gateway-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/identity-service:identity-service-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/comments-service:comments-service-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/news-service:news-service-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/saved-service:saved-service-latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/user-service:user-service-latest 
-
-
-
-
-
-
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:mysql-server-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:discovery-server-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:api-gateway-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:identity-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:comments-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:news-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:saved-service-latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/api-news:user-service-latest
