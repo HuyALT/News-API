@@ -2,8 +2,8 @@ name: Build, Test and Push Docker Images
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'news-microservice/**'
   pull_request:
     branches:
       - main
