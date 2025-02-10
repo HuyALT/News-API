@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'news-microservice/**'
+  workflow_dispatch:
   pull_request:
     branches:
       - main
