@@ -24,6 +24,11 @@ Cách hoạt động back-end được mô tả trong hình sau
 ## Tổng quan về giao diện
 Được viết bằng Angular. Phần này không được chi tiết lắm nhưng về cơ bản các chức năng vẫn hoạt động bình thường
 ### Trang Chủ
+![ERD Split](image/front-end-1.png)
+### Chi tiết tin tức
+![ERD Split](image/front-end-2.png)
+### Giao diện quản lý
+![ERD Split](image/front-end-3.png)
 
 ## Cách khởi chạy back-end bằng Docker
 
