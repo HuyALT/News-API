@@ -22,10 +22,10 @@ news-web-frontend/*.sublime-workspace
 
 # Visual Studio Code
 news-web-frontend/.vscode/*
-news-web-frontend/!.vscode/settings.json
-news-web-frontend/!.vscode/tasks.json
-news-web-frontend/!.vscode/launch.json
-news-web-frontend/!.vscode/extensions.json
+# news-web-frontend/!.vscode/settings.json
+# news-web-frontend/!.vscode/tasks.json
+# news-web-frontend/!.vscode/launch.json
+# news-web-frontend/!.vscode/extensions.json
 news-web-frontend/.history/*
 
 # Miscellaneous
