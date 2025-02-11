@@ -21,15 +21,11 @@ Với khá ít bảng, việc phân chia cơ sở dữ liệu là không cần t
 
 #### Docker compose v1
 Cập nhật các biến môi trường trong file service.env sau đó chạy.
-````md
-```
+````cmd
 docker-compose --env-file service.env up -d
-```
 ````
 #### Docker compose v2
 Thay thế biến môi trường trực tiếp trong file docker-compose.yml chạy
-````md
-```
+````cmd
 docker compose up -d
-```
 ````
