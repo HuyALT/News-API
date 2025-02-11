@@ -48,3 +48,4 @@ Thay thế biến môi trường trực tiếp trong file docker-compose.yml ch�
 ````cmd
 docker compose up -d
 ````
+#### Hướng dẫn sử dụng API [API Doccument](https://docs.google.com/document/d/1MILX7e_m3uf-qo26MZG9JSqRdvJ1B2_e/edit?usp=sharing&ouid=107957117387250494661&rtpof=true&sd=true)
