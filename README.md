@@ -17,7 +17,7 @@ Với khá ít bảng, việc phân chia cơ sở dữ liệu là không cần t
 
 ![ERD Split](image/News-ERD-split.png)
 
-## Cách khởi chạy trên Docker
+## Cách khởi chạy back-end bằng Docker
 
 #### Docker compose v1
 Cập nhật các biến môi trường trong file service.env sau đó chạy.
