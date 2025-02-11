@@ -7,10 +7,10 @@
   <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" />
 </p>
 <h2>Cơ sở dữ liệu</h2>
-<h4>Cấu trúc ban đầu</h4>
-Cơ sở dữ liệu được thiết kế đơn giản hóa như sau
+<h4>Cơ sở dữ liệu được thiết kế đơn giản hóa như sau</h4>
 <img src="image/News-ERD.png"/>
-<h4>Cấu trúc sau khi phân chia</h4>
+<h4>Với khá ít bảng việc phân chia cơ sở dữ liệu là không cần thiết, tuy nhiên để nghiên cứu về kiến trúc microservice nó được phân chia như sau</h4>
+<img src="image/News-ERD-split.png"/>
 <h2>How to run</h2>
 config in service.env <br>
 run docker-compose --env-file service.env up -d
