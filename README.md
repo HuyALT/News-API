@@ -8,6 +8,8 @@
 </p>
 <h2>Cơ sở dữ liệu</h2>
 <h4>Cấu trúc ban đầu</h4>
+Cơ sở dữ liệu được thiết kế đơn giản hóa như sau
+<img src="image/News-ERD.png"/>
 <h4>Cấu trúc sau khi phân chia</h4>
 <h2>How to run</h2>
 config in service.env <br>
