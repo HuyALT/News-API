@@ -17,6 +17,9 @@ Với khá ít bảng, việc phân chia cơ sở dữ liệu là không cần t
 
 ![ERD Split](image/News-ERD-split.png)
 
+## Tổng quan giao diện
+
+
 ## Cách khởi chạy back-end bằng Docker
 
 #### Docker compose v1
