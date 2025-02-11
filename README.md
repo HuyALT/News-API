@@ -17,8 +17,13 @@ Với khá ít bảng, việc phân chia cơ sở dữ liệu là không cần t
 
 ![ERD Split](image/News-ERD-split.png)
 
-## Tổng quan giao diện
+## Tổng quan về hệ thống Back-end
+Cách hoạt động back-end được mô tả trong hình sau
+![ERD Split](image/BackendLogic.png)
 
+## Tổng quan về giao diện
+Được viết bằng Angular. Phần này không được chi tiết lắm nhưng về cơ bản các chức năng vẫn hoạt động bình thường
+### Trang Chủ
 
 ## Cách khởi chạy back-end bằng Docker
 
