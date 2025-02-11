@@ -7,10 +7,19 @@
   <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" />
 </p>
 <h2>Cơ sở dữ liệu</h2>
-<h4>Cơ sở dữ liệu được thiết kế đơn giản hóa như sau</h4>
+<p>Cơ sở dữ liệu được thiết kế đơn giản hóa như sau</p>
 <img src="image/News-ERD.png"/>
-<h4>Với khá ít bảng việc phân chia cơ sở dữ liệu là không cần thiết, tuy nhiên để nghiên cứu về kiến trúc microservice nó được phân chia như sau</h4>
+<p>Với khá ít bảng việc phân chia cơ sở dữ liệu là không cần thiết, tuy nhiên để nghiên cứu về kiến trúc microservice nó được phân chia như sau</p>
 <img src="image/News-ERD-split.png"/>
-<h2>How to run</h2>
-config in service.env <br>
-run docker-compose --env-file service.env up -d
+
+<h2>Cách khởi chạy trên Docker</h2>
+<h4>Docker compose v1</h4>
+Cập nhật các biến môi trường trong file service.env sau đó chạy.
+'''
+docker-compose --env-file service.env up -d
+'''
+<h4>Docker compose v2</h4>
+Thay thế biến môi trường trực tiếp trong file docker-compose.yml chạy
+'''
+docker compose up -d
+'''
