@@ -15,11 +15,15 @@
 <h2>Cách khởi chạy trên Docker</h2>
 <h4>Docker compose v1</h4>
 Cập nhật các biến môi trường trong file service.env sau đó chạy.
+````md
 ```
 docker-compose --env-file service.env up -d
 ```
+````
 <h4>Docker compose v2</h4>
 Thay thế biến môi trường trực tiếp trong file docker-compose.yml chạy
+````md
 ```
 docker compose up -d
 ```
+````
