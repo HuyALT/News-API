@@ -1,0 +1,17 @@
+<nav>
+    <div class="admin-profile">
+       
+        <div id="infoDetails" class="info-details">
+            <p>Tên: {{userInfo.username}}</p>
+            <p>{{userInfo.email}}</p>
+        </div>
+    </div>
+    <ul>
+        <li><a (click)="info()"><i class="fas fa-info"></i>Thông tin</a></li>
+        <li><a (click)="usermanager()"><i class="fas fa-bars"></i>Danh sách tài khoản</a></li>
+        <li><a (click)="newsmanager()"><i class="fas fa-address-card"></i>Danh sách bài viết</a></li>
+        <li><a (click)="categorymanager()"><i class="fas fa-window-restore"></i>Chủ đề chính</a></li>
+        <li><a (click)="subcategorymanager()"><i class="fas fa-drum-steelpan"></i>Chủ đề phụ</a></li>
+        <li><a (click)="logout()"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a></li>
+    </ul>
+</nav>

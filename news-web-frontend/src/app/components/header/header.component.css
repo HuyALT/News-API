@@ -1,0 +1,245 @@
+.logoweb{
+    width: 80px;
+    height: 60px;
+}
+.site-header {
+    background-color: #6de56d;
+    color: white;
+    padding: 7px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.avatar {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    right: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.box-login-search {
+    display: flex;
+}
+.main-nav ul {
+    list-style: none;
+    margin-right: 120px;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 5px;
+
+}
+
+.main-nav .dropdown .item {
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.main-nav ul li .item:hover {
+    border-radius: 5px;
+    background-color: white;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%; /* Đảm bảo thanh tìm kiếm chiếm toàn bộ chiều rộng */
+    max-width: 800px; /* Đặt chiều rộng tối đa cho thanh tìm kiếm */
+}
+
+.search-box input[type="text"] {
+    padding: 10px; /* Tăng padding để input cao hơn */
+    border: none;
+    outline: none;
+    border-radius: 3px 0 0 3px;
+    width: 60%; /* Chiếm 85% chiều rộng của thanh tìm kiếm */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng của input */
+}
+
+.search-box button {
+    padding: 10px 20px; /* Tăng padding để nút cao hơn và rộng hơn */
+    border: none;
+    background-color: #bec48e; /* Màu xanh lam của Facebook */
+    color: white;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+    width: 10%; /* Chiếm 15% chiều rộng của thanh tìm kiếm */
+}
+
+.search-box button:hover {
+    background-color: #145dbf; /* Màu xanh đậm hơn khi hover */
+}
+.main-nav ul li {
+    position: relative; /* Để menu dropdown nằm tương đối so với mục cha */
+    margin-left: 20px;
+}
+
+.avatar-trigger{
+    position: relative;
+    /* width: 100%; */
+    cursor: pointer;
+}
+
+.avatar-dropbox{
+    display: none;
+}
+
+
+.avatar-trigger:hover > .active{
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-20px);
+    left: 0;
+    background-color: #ecffe4;
+    list-style: none;
+    width: max-content;
+    /* gap:15px; */
+    z-index: 1000;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all .3s ease-in-out;
+   
+}
+
+.avatar-trigger:hover > .active > li {
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 20px;
+
+    
+}
+.avatar-trigger:hover > .active > li > a{
+    text-decoration: none;
+    color: #000;
+    
+}
+.avatar-trigger > .active > li:hover  {
+    background-color: #b3bb77;
+}
+.avatar-trigger > .active > li:hover > a {
+    color: white;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-icon p {
+    padding-left: 10px;
+}
+
+.user-icon {
+    display: flex;
+    justify-content: center;
+}
+
+/* Dropdown menu */
+li .dropdown-menu {
+    display:none; 
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: #ffffff;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px;
+    min-width: 200px; /* Đặt chiều rộng tối thiểu cho menu */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng cho dropdown menu */
+}
+
+.dropdown {
+  list-style: none; 
+  padding: 0; 
+  margin: 0;
+  width: 120px;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+li.dropdown .item {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%; 
+  height: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+  text-decoration: none; 
+  color: black;
+  cursor: pointer;
+}
+
+.dropdown-menu li a {
+    padding: 20px 25px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropdown-menu li a:hover {
+    color: black;
+    background-color: #e3ffe0;
+}
+
+/* Hiển thị dropdown khi hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.box-search {
+    margin-top: 5px;
+}
+.button-item {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ecffe4; /* Màu xanh lam của Facebook */
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px; /* Viền tròn */
+    font-size: 12px;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+.button-item:hover {
+    color: white;
+    background-color: #4c6d56; /* Màu xanh đậm hơn khi hover */
+}

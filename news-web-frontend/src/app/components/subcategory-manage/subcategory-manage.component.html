@@ -1,0 +1,63 @@
+<div class="container">
+    <app-admin-option></app-admin-option>
+    <main>
+        <section id="posts">
+            <h2>Danh sách chủ đề phụ</h2>
+            
+            <button id="addBtn" (click)="showForm()">Add</button>
+            <div style="width: 100%; height: 10px;margin-bottom: 10px;
+            padding: 25px;
+            width: 100%;
+            box-sizing: border-box;" ></div>
+            <div id="overlay" #overlay></div>
+            <div id="formContainer" #formContainer>
+                <button class="closeFormBtn" id="closeFormBtn" (click)="hideForm()"></button>
+                <h2>Thêm Chủ Đề Phụ</h2>
+                <form id="postForm" autocomplete="off" (ngSubmit)="onSubmitForm()">
+                    <label for="postTitle">Tên:</label>
+                    <input type="text" id="postTitle" name="postTitle" [(ngModel)]="subcategorySelect.name">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postType">Mã Chủ Đề Chính</label>
+                            <select id="postType" name="postType" [(ngModel)]="subcategorySelect.category_id">
+                                <option *ngFor="let category of categorylist" value="{{category.id}}">{{category.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="postShortName">Tên ngắn:</label>
+                            <input type="text" id="postShortName" name="postShortName" [(ngModel)]="subcategorySelect.sort_name">
+                        </div>
+                    </div>
+                    <button type="submit" id="submitPostBtn">Submit</button>
+                </form>
+                
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Tên ngắn</th>
+                            <th>Mã chủ đề chính</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let subcategory of subcategorylist">
+                            <td>{{subcategory.id}}</td>
+                            <td>{{subcategory.name}}</td>
+                            <td>{{subcategory.sort_name}}</td>
+                            <td>{{subcategory.category_id}}</td>
+                            <td>
+                                <button class="edit" (click)="editSubcategory(subcategory.id)">Sửa</button>
+                                <button class="delete" (click)="deleteSubcategory(subcategory.id)">Xóa</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>

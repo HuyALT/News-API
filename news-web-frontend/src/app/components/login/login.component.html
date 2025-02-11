@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="login-container">
+        <a [routerLink]="['/home']" style="text-decoration: none;"><h1>24h News</h1></a>
+        <form (ngSubmit) = "loginSubmit()">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required [(ngModel)]="loginForm.username">
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" required [(ngModel)]="loginForm.password">
+            </div>
+            <span style="color: red;" *ngIf="isloginFail" >Đăng nhập thất bại kiểm tra lại username hoặc password của bạn</span>
+            <button type="submit">Đăng Nhập</button>
+            <a href="#">Quên mật khẩu?</a>
+            <div class="divider"></div>
+            <button type="button" class="signup-btn" (click)="signUp()">Tạo tài khoản mới</button>
+        </form>
+    </div>
+</div>

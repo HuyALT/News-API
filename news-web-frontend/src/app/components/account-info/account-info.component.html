@@ -1,0 +1,21 @@
+<app-header *ngIf="user.role==2"></app-header>
+<div [ngClass]="user.role==1 ? 'container-admin' :'container-user' ">
+    <app-admin-option *ngIf="user.role==1"></app-admin-option>
+    <div class="account-container">
+        <h1>Thông tin tài khoản</h1>
+        <form id="account-form">
+            <div class="avatar-section">
+                <img id="avatar-preview" src="{{user.image}}" alt="Avatar">
+                <input type="file" id="avatar">
+            </div>
+            <div class="form-group">
+                <input type="text" id="username" name="username" value="{{user.username}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">{{user.email}}</label>
+            </div>
+            <button type="button" id="change-password-btn" (click)="changePassword()">Thay đổi mật khẩu</button>
+        </form>
+    </div>
+    
+</div>

@@ -1,0 +1,11 @@
+    <div class="otp-container">
+        <h2>Nhập mã OTP đã gửi đên mail của bạn</h2>
+        <input type="text" class="otp-input" maxlength="6" id="otpInput" [(ngModel)]="inputOTP">
+        <button class="submit-btn" (click)="validateOTP()">Xác nhận</button>
+        <button [disabled]="buttonDisabled" [ngClass]="buttonDisabled?'resend-btn-disable':'resend-btn-active'"  (click)="resendOTP()" >
+            Gửi lại OTP
+        </button>
+        <h3 [ngStyle]="{'color': isnonValid ? 'red':'green'}">{{info}}</h3>
+    </div>
+    
+

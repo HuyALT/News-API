@@ -1,0 +1,185 @@
+.container {
+    display: flex;
+}
+
+
+main {
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #35424a;
+    text-align: center;
+}
+
+button#addBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+button#addBtn:hover {
+    background-color: #45a049;
+}
+
+.table-container{
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #35424a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button.edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+
+#formContainer {
+    position: fixed;
+    background-color: #fff;
+    padding: 20px;
+    width: 60%; /* Đặt kích thước chiều rộng của form */
+    max-width: 800px; /* Giới hạn chiều rộng tối đa của form */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    max-height: calc(100vh - 40px); /* Tính toán chiều cao tối đa của form để cách lề trên và lề dưới 20px */
+    overflow-y: auto; /* Thêm cuộn dọc nếu nội dung form vượt quá chiều cao tối đa */
+}
+
+#formContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#formContainer label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#formContainer input[type="text"],
+#formContainer textarea,
+#formContainer select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#formContainer .form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#formContainer .form-group {
+    width: 48%;
+}
+
+#formContainer button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#formContainer button:hover {
+    background-color: #0e63b0;
+}
+
+.closeFormBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 0% !important;
+}
+
+.closeFormBtn::before, .closeFormBtn::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    background-color: #333;
+    top: 4px;
+    left: 11px;
+}
+
+.closeFormBtn::before {
+    transform: rotate(45deg);
+}
+
+.closeFormBtn::after {
+    transform: rotate(-45deg);
+}
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none; /* Ẩn ban đầu */
+}

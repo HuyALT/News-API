@@ -1,0 +1,42 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+news-web-frontend/node_modules
+news-web-frontend/npm-debug.log
+news-web-frontend/yarn-error.log
+
+# IDEs and editors
+news-web-frontend/.idea/
+news-web-frontend/.project
+news-web-frontend/.classpath
+news-web-frontend/.c9/
+news-web-frontend/*.launch
+news-web-frontend/.settings/
+news-web-frontend/*.sublime-workspace
+
+# Visual Studio Code
+news-web-frontend/.vscode/*
+news-web-frontend/!.vscode/settings.json
+news-web-frontend/!.vscode/tasks.json
+news-web-frontend/!.vscode/launch.json
+news-web-frontend/!.vscode/extensions.json
+news-web-frontend/.history/*
+
+# Miscellaneous
+news-web-frontend/.angular/cache
+news-web-frontend/.sass-cache/
+news-web-frontend/connect.lock
+news-web-frontend/coverage
+news-web-frontend/libpeerconnection.log
+news-web-frontend/testem.log
+news-web-frontend/typings
+
+# System files
+.DS_Store
+Thumbs.db

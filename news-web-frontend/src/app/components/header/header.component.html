@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="container">
+      <div class="logo">
+          <a href="#"><img src="https://ik.imagekit.io/dx1lgwjws/News/logo24h.png?updatedAt=1717412821525" alt="24h Tin Tức Logo" class="logoweb"></a>
+      </div>
+      <div class="box-container">
+         <div class="box-login-search">
+              <div class="search-box">
+                  <input type="text" placeholder="Tìm kiếm..." [(ngModel)]="searchTerm">
+                  <button type="button" class="button-item" (click)="searchSubmit()">Tìm</button>
+              </div>
+              <div class="box-search">
+                  <button type="button" [routerLink]="['/login']" class="button-item" *ngIf="!isLogin">Đăng Nhập</button>
+                  <div class="avatar-trigger">
+
+                    <div class="user-icon " *ngIf="isLogin">
+                        <img src="{{user.image}}" alt="Biểu tượng người dùng">
+                        <p>{{user.username}}</p>
+                    </div>
+                    <ul class="avatar-dropbox active">
+                        <li><a (click)="info()">Thông tin</a></li>
+                        <li><a (click)="getSavedNews()">Bài viết đã lưu</a></li>
+                        <li><a (click)="logout()">Đăng xuất</a></li>
+                    </ul>
+                </div>
+              </div>
+         </div>
+          <nav class="main-nav">
+              <ul>
+                  <li class="dropdown" *ngFor="let category of categories">
+                    <a (click)="newsByCategory(category.id)"  class="item">{{ category.name }}</a>
+                      <ul class="dropdown-menu">
+                          <li *ngFor="let subcategory of category.subcategories" >
+                            <a (click)="newsBySubcategory(subcategory.id)">{{subcategory.name}}</a>
+                          </li>
+                      </ul>
+                  </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

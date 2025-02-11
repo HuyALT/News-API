@@ -1,0 +1,47 @@
+<app-header></app-header>
+<main class="main-content">
+    <div class="article-detail">
+        <div class="article-note">
+            <div class="article-box-path">
+                <p class="article-path" >{{newsdetail.category_name}}  |   </p> <p class="article-path-item">{{newsdetail.subcategory_name}}</p>
+            </div>
+             <p class="article-date">{{newsdetail.create_at}}</p>
+             <button class="article_nosave" *ngIf="isLogin&&!isSaved" (click)="addSaved()">Lưu</button>
+             <button class="article_saved" *ngIf="isLogin&&isSaved" (click)="deleteSaved()">Hủy Lưu</button>
+        </div>
+        <h1 class="article-title">{{newsdetail.title}}</h1>
+        <p class="article-summary">{{newsdetail.summary}}</p>
+        <button class="summaryButton" *ngIf="!isSummary" (click)="summary()">Tóm tắt nội dung chính</button>
+        <div class="summaryBox" *ngIf="isSummary">
+            <h3>Tóm tắt</h3>
+            <span class="summaryContent">{{summaryContent}}</span>
+        </div>
+        <div class="article-content" [innerHTML]="newsdetail.content">
+            
+        </div>
+    </div>
+
+
+    <div class="comments-section">
+        <h2>Bình luận</h2>
+        <form id="comment-form" *ngIf="isLogin" (ngSubmit)="addComment()">
+            <textarea id="comment-input" placeholder="Nhập bình luận của bạn" required [(ngModel)]="commentContent" name="comment"></textarea>
+            <button type="submit">Gửi bình luận</button>
+        </form>
+        <button class="loginRequire" *ngIf="!isLogin" (click)="login()">Đăng nhập để gửi bình luận</button>
+        <div id="comments-list"></div>
+    </div>
+
+    <div class="comment-container">
+        <div class="comment-wrapper">
+            <div class="list_comment" *ngFor="let comment of commentList">
+                <img src="{{comment.userInfo.image}}" alt="Avatar" class="avatar_comment">
+                <div class="comment-details">
+                    <div class="comment-author">{{comment.userInfo.username}}</div>
+                    <div class="comment-text">{{comment.content}}</div>
+                </div>
+                <p class="comment_date">{{comment.createAt}}</p>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,32 @@
+<div class="container">
+<app-admin-option></app-admin-option>
+<main>
+    <section id="users">
+        <h2>Danh sách người dùng</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Kích hoạt</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userlist">
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td [ngStyle]="{'color': user.active==1?'green':'red'}" >{{user.active==1? 'Đã kích hoạt':'Chưa kích hoạt'}}</td>
+                    <td>
+                        <button class="lock" *ngIf="user.locked==1" (click)="changeLocked(user.id)">Khóa</button>
+                        <button class="unlock" *ngIf="user.locked==0" (click)="changeLocked(user.id)">Mở Khóa</button>
+                        <button class="delete">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+</div>

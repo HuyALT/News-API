@@ -1,0 +1,47 @@
+<div class="container">
+    <app-admin-option></app-admin-option>
+    <main>
+        <section id="posts">
+            <h2>Danh sách chủ đề chính</h2>
+            <button id="addBtn" (click)="showForm()">Add</button>
+            <div id="overlay" #overlay></div>
+            <div id="formContainer" #formContainer>
+                <button class="closeFormBtn" id="closeFormBtn" (click)="hideForm()"></button>
+                <h2>Chủ đề chính</h2>
+                <form id="postForm" autocomplete="off" (ngSubmit)="onSunmitForm()">
+                    <label for="postTitle">Tên:</label>
+                    <input type="text" id="postTitle" name="postTitle" [(ngModel)]="categorySelect.name">
+                    <div class="form-row"> 
+                        <div class="form-group">
+                            <label for="postShortName">Tên ngắn:</label>
+                            <input type="text" id="postShortName" name="postShortName" [(ngModel)]="categorySelect.sort_name">
+                        </div>
+                    </div>        
+                    <button type="submit" id="submitPostBtn">Submit</button>
+                </form>
+                
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Tên ngắn</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let category of categorylist">
+                        <td>{{category.id}}</td>
+                        <td>{{category.name}}</td>
+                        <td>{{category.sort_name}}</td>
+                        <td>
+                            <button class="edit" (click)="editCategory(category.id)">Sửa</button>
+                            <button class="delete" (click)="deleteCategory(category.id)">Xóa</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

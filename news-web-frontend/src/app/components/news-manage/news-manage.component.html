@@ -1,0 +1,97 @@
+<div class="container">
+    <app-admin-option></app-admin-option>
+    <main>
+        <section id="posts">
+            <h2>Danh sách bài viết</h2>
+            
+            <div id="overlay" #overlay></div>
+            <div id="formContainer" #formContainer>
+                <button class="closeFormBtn" id="closeFormBtn" (click)="hideForm()"></button>
+                <h2>Tin tức</h2>
+                <form id="postForm" (ngSubmit)="onSubmitForm()" autocomplete="off">
+                    <label for="postTitle">Tiêu đề:</label>
+                    <input type="text" id="postTitle" name="postTitle" [(ngModel)]="newsdetail.title">
+        
+                    <label for="postImage">Link ảnh:</label>
+                    <input type="text" id="postImage" name="postImage" [(ngModel)]="newsdetail.image">
+        
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postType">Kiểu tin tức:</label>
+                            <select id="postType" name="postType" [(ngModel)]="selectType">
+                                <option value="1">Text</option>
+                                <option value="0">Video</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="postShortName">Slug:</label>
+                            <input type="text" id="postShortName" name="postShortName" [(ngModel)]="newsdetail.sort_title">
+                        </div>
+                    </div>
+        
+                    <label for="postVideo">Đường link video:</label>
+                    <input type="text" id="postVideo" name="postVideo" [(ngModel)]="newsdetail.link">
+        
+                    <label for="postSummary">Tóm tắt tin tức:</label>
+                    <textarea id="postSummary" name="postSummary" [(ngModel)]="newsdetail.summary"></textarea>
+        
+                    <label for="postContent">Nội dung tin tức (html code):</label>
+                    <textarea id="postContent" name="postContent" [(ngModel)]="newsdetail.content"></textarea>
+        
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postMainTopic">Mã chủ đề chính:</label>
+                            <select id="postMainTopic" name="postMainTopic" (change)="onChangeCategory($event)" [value]="selectCategory">
+                                <option *ngFor="let category of categorylist" value="{{category.id}}">{{category.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="postSubTopic">Mã chủ đề phụ:</label>
+                            <select id="postSubTopic" name="postSubTopic" [(ngModel)]="selectSubCategory">
+                                <option *ngFor="let subcategory of subcategorylist" value="{{subcategory.id}}">{{subcategory.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <button type="submit" id="submitPostBtn">Submit</button>
+                </form>
+            </div>
+           
+            <button id="addBtn" (click)="showForm()">Thêm</button>
+            <input class="search" placeholder="Tìm kiếm..." [(ngModel)]="searchTerm">
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Tên ngắn</th>
+                            <th>Mã chủ đề chính</th>
+                            <th>Mã chủ đề phụ</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày sửa</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let news of fillterData">
+                            <td>{{news.id}}</td>
+                            <td>{{news.title}}</td>
+                            <td>{{news.sort_title}}</td>
+                            <td>{{news.category_id}}</td>
+                            <td>{{news.subcategory_id}}</td>
+                            <td>{{news.create_at}}</td>
+                            <td>{{news.update_at}}</td>
+                            <td>
+                                <button class="edit" (click)="editnews(news.id)">Sửa</button>
+                                <button class="hide" (click)="changeHideAndShow(news.id)" *ngIf="news.active==1">Ẩn</button>
+                                <button class="show" (click)="changeHideAndShow(news.id)" *ngIf="news.active==0">Hiển thị</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>

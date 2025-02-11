@@ -1,0 +1,20 @@
+<app-header></app-header>
+<main class="main-content">
+    <div class="page">
+        <div class="article-group" >
+           <div class="article" *ngFor="let news of currentPageNews">
+                <img src="{{news.image}}" alt="Mô tả hình ảnh" class="article-image">
+                <div class="article-content">
+                    <h2 class="article-title"><a (click)="newsdetail(news.id)" style="cursor: pointer;">{{news.title}}</a></h2>
+                    <p class="article-description">{{news.summary}}</p>
+                    <p class="article-date">{{news.create_at}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="pagination" *ngIf="totalPages !== 0">
+    <button (click)="previousPage()" [disabled]="currentPage === 1" class="previous">&laquo; Previous</button>
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="next">Next &raquo;</button>
+</div>
